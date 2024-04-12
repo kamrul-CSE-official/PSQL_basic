@@ -110,8 +110,38 @@ ALTER TABLE user1
 ALTER TABLE user1
     DROP CONSTRAINT unique_email;
 
+--  # Foreign key constraint (একটা টেবিল থেকে আরেকটা টেবিলে ফরেন কী রাখলে যদি কোন কিছু ডিলেট করা হয় তখন এরর দিবে কারন উক্ত টেবিলের pk অন্য টেবিলে fk)
+-- 1.Employ table
+-- 2.Department table
+-- Each employment velongs to a department
+
+CREATE TABLE Department (
+    deptID SERIAL PRIMARY KEY,
+    deptName VARCHAR(255)
+);
+
+INSERT INTO Department (deptName) VALUES ('IT');
+
+DELETE FROM Department WHERE deptID = 1;
+
+SELECT * FROM Department
 
 
+CREATE TABLE Employee(
+    empID SERIAL PRIMARY KEY,
+    empName VARCHAR(255) NOT NULL,
+    departmentID INT,
+    CONSTRAINT fk_constraint_dept
+        FOREIGN KEY (departmentID)
+        REFERENCES Department(deptID)
+)
+
+
+INSERT INTO Employee (empName, departmentID) VALUES ('Muktadir', 1);
+
+DELETE FROM Employee WHERE empID = 1;
+
+SELECT * FROM Employee;
 
 
 
