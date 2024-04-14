@@ -248,9 +248,14 @@ WHERE name <> 'John Doe' AND salary < 50000;
 
 SELECT * FROM employes
 ORDER BY name 
-ASC
+ASC;
 
 SELECT * FROM employes
 ORDER BY name 
 DESC;
+
+-- # Pagenation
+SELECT * FROM employes
+ORDER BY NAME
+ASC LIMIT 10 OFFSET 2;
 
