@@ -229,7 +229,7 @@ INSERT INTO employes (name, email, salary, joining_date, deptID) VALUES
     ('Sarah Martinez', 'sarah.martinez@example.com', 59000, '2023-09-05', 3),
     ('Christopher Lee', 'christopher.lee@example.com', 54000, '2024-04-02', 5);
 
--- # Many types to SELECT
+-- => # Many types to SELECT
 SELECT * FROM departments;
 SELECT * FROM employes;
 
@@ -258,4 +258,25 @@ DESC;
 SELECT * FROM employes
 ORDER BY NAME
 ASC LIMIT 10 OFFSET 2;
+
+
+SELECT * FROM employes
+WHERE salary = (
+    SELECT MAX(salary) FROM employes
+)
+
+-- # Min max find
+SELECT * FROM employes
+WHERE salary = (
+    SELECT MAX(salary) FROM employes
+);
+
+SELECT * FROM employes
+WHERE salary = (
+    SELECT MIN(salary) FROM employes
+);
+
+SELECT MAX(salary) FROM employes
+
+SELECT MIN(salary) FROM employes;
 
