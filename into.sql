@@ -180,3 +180,13 @@ VALUES
     description = 'Dummy text'
     WHERE course_id > 6;
 
+    UPDATE courses
+    SET
+    course_name = 'Postgres',
+    description = 'Dummy text'
+    WHERE courses_id > 1 course_id > 6;
+
+    -- Delete row from table
+DELETE FROM courses
+WHERE course_id = 1
+
