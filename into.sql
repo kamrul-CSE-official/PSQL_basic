@@ -167,3 +167,16 @@ VALUES
     SET 
     course_name = 'Postgres for beginners'
     WHERE course_id = 1; 
+
+    UPDATE courses
+    SET
+    course_name = 'Postgres',
+    description = 'Dummy text'
+    WHERE course_id = 1;
+
+    UPDATE courses
+    SET
+    course_name = 'Postgres',
+    description = 'Dummy text'
+    WHERE course_id > 6;
+
