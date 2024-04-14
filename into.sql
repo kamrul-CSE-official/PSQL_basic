@@ -190,3 +190,46 @@ VALUES
 DELETE FROM courses
 WHERE course_id = 1
 
+-- # Power of 'NOT EXISTS' key word
+CREATE TABLE IF NOT EXISTS departments(
+    deptID SERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS employes(
+    empID SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    salary INTEGER NOT NULL,
+    joining_date DATE NOT NULL,
+    deptID INTEGER NOT NULL,
+    CONSTRAINT fk_deptID
+        FOREIGN KEY(deptID)
+        REFERENCES departments(deptID)
+);
+
+-- Inserting random data into the departments table
+INSERT INTO departments (name) VALUES
+    ('Marketing'),
+    ('Finance'),
+    ('Human Resources'),
+    ('Engineering'),
+    ('Sales');
+
+-- Inserting random data into the employes table
+INSERT INTO employes (name, email, salary, joining_date, deptID) VALUES
+    ('John Doe', 'john.doe@example.com', 50000, '2023-05-10', 1),
+    ('Jane Smith', 'jane.smith@example.com', 60000, '2022-09-15', 4),
+    ('Alice Johnson', 'alice.johnson@example.com', 55000, '2024-01-20', 2),
+    ('Bob Williams', 'bob.williams@example.com', 48000, '2023-11-30', 5),
+    ('Emily Brown', 'emily.brown@example.com', 52000, '2022-07-08', 3),
+    ('Michael Davis', 'michael.davis@example.com', 58000, '2023-03-25', 1),
+    ('Jessica Wilson', 'jessica.wilson@example.com', 53000, '2024-02-18', 4),
+    ('David Rodriguez', 'david.rodriguez@example.com', 51000, '2022-12-10', 2),
+    ('Sarah Martinez', 'sarah.martinez@example.com', 59000, '2023-09-05', 3),
+    ('Christopher Lee', 'christopher.lee@example.com', 54000, '2024-04-02', 5);
+
+-- # Many types to SELECT
+SELECT * FROM departments;
+SELECT * FROM employes;
+
