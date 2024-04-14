@@ -164,5 +164,6 @@ VALUES
 
     -- # Update database table row
     UPDATE courses
-    ??
-    WHERE 
+    SET 
+    course_name = 'Postgres for beginners'
+    WHERE course_id = 1; 
