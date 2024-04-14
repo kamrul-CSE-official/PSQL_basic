@@ -266,6 +266,10 @@ WHERE salary = (
 )
 
 -- # Min max find
+
+SELECT * FROM employes ORDER BY salary DESC LIMIT 1;
+SELECT * FROM employes ORDER BY salary DESC LIMIT 1 OFFSET 3;
+
 SELECT * FROM employes
 WHERE salary = (
     SELECT MAX(salary) FROM employes
