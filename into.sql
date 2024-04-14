@@ -159,4 +159,10 @@ INSERT INTO
 VALUES
     ('PostgreSQL for Developers', 'A complete postgreSQL for developers', '2020-07-13'),
     ('PostgreSQL Administration', 'A complete postgreSQL Guide for DBA', NULL),
-    ('PostgreSQL High Performance', NULL, NULL);
+    ('PostgreSQL High Performance', NULL, NULL),
+    ('PostgreSQL Bootcamp', 'Learn postgresSQL', '2012-02-26');
+
+    -- # Update database table row
+    UPDATE courses
+    ??
+    WHERE 
