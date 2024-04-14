@@ -246,3 +246,11 @@ WHERE joining_date <= '2023-01-01';
 SELECT * FROM employes
 WHERE name <> 'John Doe' AND salary < 50000;
 
+SELECT * FROM employes
+ORDER BY name 
+ASC
+
+SELECT * FROM employes
+ORDER BY name 
+DESC;
+
