@@ -284,3 +284,13 @@ SELECT MAX(salary) FROM employes
 
 SELECT MIN(salary) FROM employes;
 
+-- IN, NOT IN, BETWEEN, LIKE
+SELECT * FROM employes WHERE empid IN (2, 300, 5, 10);
+SELECT * FROM employes WHERE empid NOT IN (2, 300, 5, 10);
+SELECT * FROM employes WHERE salary BETWEEN 50000 AND 60000;
+SELECT * FROM employes WHERE name LIKE '%a%';
+SELECT * FROM employes WHERE name LIKE 'A%';
+SELECT * FROM employes WHERE name LIKE '%a';
+SELECT * FROM employes WHERE name LIKE '_ar%';
+SELECT * FROM employes WHERE deptid IS NULL;
+
