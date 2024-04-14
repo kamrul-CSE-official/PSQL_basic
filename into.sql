@@ -294,3 +294,14 @@ SELECT * FROM employes WHERE name LIKE '%a';
 SELECT * FROM employes WHERE name LIKE '_ar%';
 SELECT * FROM employes WHERE deptid IS NULL;
 
+-- => # JOINING
+SELECT employes.name, employes.email, departments.name AS department_name
+FROM employes
+INNER JOIN departments ON employes.deptID = departments.deptID;
+
+SELECT * FROM employes
+INNER JOIN departments ON employes.deptID = departments.deptID;
+
+
+SELECT * FROM departments;
+SELECT * FROM employes;
