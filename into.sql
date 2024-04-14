@@ -144,4 +144,19 @@ DELETE FROM Employee WHERE empID = 1;
 SELECT * FROM Employee;
 
 
+CREATE TABLE courses(
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(255) NOT NULL,
+    description VARCHAR(255),
+    published_date DATE
+)
 
+SELECT * FROM courses;
+
+-- Date: YYYY-MM-DD
+INSERT INTO
+    courses(course_name, description, published_date)
+VALUES
+    ('PostgreSQL for Developers', 'A complete postgreSQL for developers', '2020-07-13'),
+    ('PostgreSQL Administration', 'A complete postgreSQL Guide for DBA', NULL),
+    ('PostgreSQL High Performance', NULL, NULL);
