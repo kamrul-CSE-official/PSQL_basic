@@ -233,3 +233,16 @@ INSERT INTO employes (name, email, salary, joining_date, deptID) VALUES
 SELECT * FROM departments;
 SELECT * FROM employes;
 
+SELECT empId, name, email from employes;
+
+SELECT DISTINCT deptid FROM employes;
+
+SELECT * FROM employes
+WHERE salary  > 10000 AND salary < 90000
+
+SELECT * FROM employes
+WHERE joining_date <= '2023-01-01';
+
+SELECT * FROM employes
+WHERE name <> 'John Doe' AND salary < 50000;
+
