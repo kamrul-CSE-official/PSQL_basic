@@ -320,4 +320,18 @@ NATURAL JOIN departments;
 -- => # Aggregate function
 
 SELECT AVG(salary) from employes;
+SELECT AVG(salary) AS average_salary  from employes;
+SELECT AVG(salary) AS average_salary  from employes GROUP BY deptid;
+
+SELECT * FROM employes e
+RIGHT JOIN departments d ON e.deptid = d.deptid;
+
+SELECT d.name, AVG(e.salary), MAX(e.salary), COUNT(*) 
+FROM departments d
+LEFT JOIN employes e ON e.deptid = d.deptid
+GROUP BY d.name HAVING AVG(e.salary) < 40000;
+
+SELECT SUM(salary) from employes;
+
+
 
