@@ -317,3 +317,7 @@ SELECT * FROM employes FULL JOIN departments ON employes.deptID = departments.de
 SELECT * FROM employes 
 NATURAL JOIN departments;
 
+-- => # Aggregate function
+
+SELECT AVG(salary) from employes;
+
