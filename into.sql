@@ -317,6 +317,8 @@ SELECT * FROM employes FULL JOIN departments ON employes.deptID = departments.de
 SELECT * FROM employes 
 NATURAL JOIN departments;
 
+-- https://github.com/Apollo-Level2-Web-Dev/postgresSQL-practice-task
+
 -- => # Aggregate function
 
 SELECT AVG(salary) from employes;
@@ -332,6 +334,17 @@ LEFT JOIN employes e ON e.deptid = d.deptid
 GROUP BY d.name HAVING AVG(e.salary) < 40000;
 
 SELECT SUM(salary) from employes;
+
+-- => # Sub Queries
+SELECT * FROM employes WHERE salary = (
+    SELECT MAX(salary) FROM employes
+);
+
+SELECT * FROM employes;
+SELECT * FROM employes WHERE salary = (
+    SELECT avg(salary) FROM employes
+)
+
 
 
 
