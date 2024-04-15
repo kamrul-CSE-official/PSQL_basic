@@ -302,6 +302,18 @@ INNER JOIN departments ON employes.deptID = departments.deptID;
 SELECT * FROM employes
 INNER JOIN departments ON employes.deptID = departments.deptID;
 
+SELECT * FROM employes 
+LEFT JOIN departments ON employes.deptID = departments.deptID;
+
+SELECT * FROM employes
+RIGHT JOIN departments ON employes.deptID = departments.deptID;
+
 
 SELECT * FROM departments;
 SELECT * FROM employes;
+
+SELECT * FROM employes FULL JOIN departments ON employes.deptID = departments.deptID;
+
+SELECT * FROM employes 
+NATURAL JOIN departments;
+
