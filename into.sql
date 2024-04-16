@@ -345,6 +345,8 @@ SELECT * FROM employes WHERE salary = (
     SELECT avg(salary) FROM employes
 )
 
-
+-- # Indexing And Optimization
+EXPLAIN ANALYSE SELECT empid FROM employes;
+EXPLAIN ANALYSE SELECT empid FROM employes WHERE empid = 5;
 
 
