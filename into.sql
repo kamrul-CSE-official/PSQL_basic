@@ -347,6 +347,8 @@ SELECT * FROM employes WHERE salary = (
 
 -- # Indexing And Optimization
 EXPLAIN ANALYSE SELECT empid FROM employes;
-EXPLAIN ANALYSE SELECT empid FROM employes WHERE empid = 5;
 
+CREATE INDEX name_inds ON employes(name);
+
+EXPLAIN ANALYSE SELECT empid FROM employes WHERE name = 'John Doe';
 
